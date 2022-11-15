@@ -4,6 +4,11 @@ OS=$(cat /etc/*elease | rpm --eval '%{centos_ver}')
 
 if [ $OS == 7 ]; then
     service firewalld start
+    systemctl enable firewalld
+    
+    firewall-cmd --permanent --add-service=http
+    firewall-cmd --permanent --add-service=https
+    firewall-cmd --reload
 
     firewall-cmd --zone=work --add-source=118.70.126.121/24 --permanent
     firewall-cmd --zone=work --add-source=95.111.200.151/24 --permanent
