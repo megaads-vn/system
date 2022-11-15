@@ -14,4 +14,5 @@ else
     iptables -A INPUT -p tcp --dport 22 -s 118.70.126.121 -j ACCEPT
     iptables -A INPUT -p tcp --dport 22 -s 95.111.200.151 -j ACCEPT
     iptables -A INPUT -p tcp --dport 22 -j DROP
+    service iptables restart
 fi
