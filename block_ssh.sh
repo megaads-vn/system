@@ -3,7 +3,8 @@
 OS=$(cat /etc/*elease | rpm --eval '%{centos_ver}')
 
 if [ $OS == 7 ]; then
-    systemctl start firewalld
+    service firewalld start
+
     firewall-cmd --zone=work --add-source=118.70.126.121/24 --permanent
     firewall-cmd --zone=work --add-source=95.111.200.151/24 --permanent
     firewall-cmd --reload
