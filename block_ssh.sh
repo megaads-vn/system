@@ -31,3 +31,5 @@ else
     iptables-save > /etc/sysconfig/iptables
     service iptables restart
 fi
+
+echo 'Block ssh: Done' >> block_firewalld.log
